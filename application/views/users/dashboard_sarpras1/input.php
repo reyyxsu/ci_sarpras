@@ -174,7 +174,8 @@
                 <?php } ?>
             </tbody>
         </table>
-        <button type="submit">Simpan</button>
+        <br>  
+        <button class="btn btn-primary" type="submit">Simpan</button>
     </form>
 
 
