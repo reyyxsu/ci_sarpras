@@ -135,8 +135,8 @@
 
 <br>
  
-    <form action="<?php echo site_url('inventory/save'); ?>" method="post">
-        <table border="1">
+    <form action="<?php echo site_url('input/save'); ?>" method="post">
+    <table border="1">
             <thead>
                 <tr>
                     <th>No</th>
@@ -164,7 +164,7 @@
                 foreach ($items as $item) { ?>
                     <tr>
                         <td><?php echo $no++; ?></td>
-                        <td><?php echo $item; ?></td>
+                        <td><input type="text" name="nama_barang[]" value="<?php echo $item; ?>" disabled></td>
                         <td><input type="number" name="total_barang[]" required></td>
                         <td><input type="number" name="kondisi_baik[]" required></td>
                         <td><input type="number" name="kondisi_tidak_baik[]" required></td>
@@ -174,8 +174,7 @@
                 <?php } ?>
             </tbody>
         </table>
-        <br>
-        <button class="btn btn-primary"type="submit">Simpan</button>
+        <button type="submit">Simpan</button>
     </form>
 
 
