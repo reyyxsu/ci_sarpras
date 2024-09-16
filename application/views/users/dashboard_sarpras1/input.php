@@ -14,70 +14,38 @@
   <link rel="stylesheet" href="<?php echo base_url();?>assets/bower_components/Ionicons/css/ionicons.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="<?php echo base_url();?>assets/dist/css/AdminLTE.min.css">
-  <!-- AdminLTE Skins. Choose a skin from the css/skins
-       folder instead of downloading all of them to reduce the load. -->
+  <!-- AdminLTE Skins. Choose a skin from the css/skins -->
   <link rel="stylesheet" href="<?php echo base_url();?>assets/dist/css/skins/_all-skins.min.css">
-  <!-- Morris chart -->
-  <link rel="stylesheet" href="<?php echo base_url();?>assets/bower_components/morris.js/morris.css">
-  <!-- jvectormap -->
-  <link rel="stylesheet" href="<?php echo base_url();?>assets/bower_components/jvectormap/jquery-jvectormap.css">
-  <!-- Date Picker -->
-  <link rel="stylesheet" href="<?php echo base_url();?>assets/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
-  <!-- Daterange picker -->
-  <link rel="stylesheet" href="<?php echo base_url();?>assets/bower_components/bootstrap-daterangepicker/daterangepicker.css">
-  <!-- bootstrap wysihtml5 - text editor -->
-  <link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
-
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-  <![endif]-->
-
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
+
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
-
 
 <header class="main-header">
     <!-- Logo -->
     <a href="index2.html" class="logo">
-      <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b>LT</span>
-      <!-- logo for regular state and mobile devices -->
       <span class="logo-lg"><b>SARPRAS</b> RPL</span>
     </a>
-    <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
-      <!-- Sidebar toggle button-->
       <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
         <span class="sr-only">Toggle navigation</span>
       </a>
     </nav>
-  </header>
+</header>
 
-
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
+<!-- Content Wrapper -->
+<div class="content-wrapper">
+    <!-- Content Header -->
     <section class="content-header">
-      <h1>
-        INPUT SARPRAS LAB 1
-        <small>Control panel</small>
-      </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Dashboard</li>
+
       </ol>
     </section>
 
-   
-
-
- <!-- Left side column. contains the logo and sidebar -->
+    <!-- Left side column. contains the logo and sidebar -->
  <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
@@ -113,7 +81,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a href="<?php echo base_url('admin/dashboard'); ?>"><i class="fa fa-circle-o"></i> Home</a></li>
+            <li class="active"><a href="<?php echo base_url('pengunjung/labsatu'); ?>"><i class="fa fa-circle-o"></i> Home</a></li>
           </ul>
         </li>
         </li>
@@ -133,286 +101,86 @@
     <!-- /.sidebar -->
   </aside>
 
-<br>
- 
-    <form action="<?php echo site_url('input/save'); ?>" method="post">
-    <table border="1">
-            <thead>
-                <tr>
-                    <th>No</th>
-                    <th>Nama Barang</th>
-                    <th>Total Barang</th>
-                    <th>Jumlah Barang Baik</th>
-                    <th>Jumlah Barang Tidak Baik</th>
-                    <th>Keterangan</th>
-                    <th>Nama Petugas</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                $items = [
-                    "AC", "Dinding", "Drainase", "Instalasi Listrik", "Jendela", 
-                    "Kaca", "Keyboard", "Kipas Angin", "Kursi Guru", "Kursi Hidrolik Siswa", 
-                    "Kursi Siswa", "Kusen", "LAN HUB", "Lemari", "List Plafond", 
-                    "Meja Guru", "Meja Siswa", "Mouse", "Papan Tulis", "PC All In One Asus", 
-                    "PC All In One Dell", "PC All In One HP", "PC All In One Lenovo", 
-                    "PC Rakitan", "Penghapus", "Pintu", "Plafon", "Remote AC", 
-                    "Router", "UPS", "Ventilasi"
-                ];
-                
-                $no = 1;
-                foreach ($items as $item) { ?>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="row">
+        <div class="col-md-12">
+          <!-- Box for form -->
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">INPUT SARPRAS LAB 1</h3>
+            </div>
+
+            <!-- Form start -->
+            <form action="<?php echo site_url('input/save'); ?>" method="post" enctype="multipart/form-data">
+              <div class="box-body">
+                <table class="table table-bordered">
+                  <thead>
                     <tr>
-                        <td><?php echo $no++; ?></td>
-                        <td><input type="text" name="nama_barang[]" value="<?php echo $item; ?>" disabled></td>
-                        <td><input type="number" name="total_barang[]" required></td>
-                        <td><input type="number" name="kondisi_baik[]" required></td>
-                        <td><input type="number" name="kondisi_tidak_baik[]" required></td>
-                        <td><input type="text" name="keterangan[]"></td>
-                        <td><input type="text" name="nama_petugas" required></td>
+                      <th>No</th>
+                      <th>Nama Barang</th>
+                      <th>Total Barang</th>
+                      <th>Jumlah Barang Baik</th>
+                      <th>Jumlah Barang Tidak Baik</th>
+                      <th>Keterangan</th>
+                      <th>Nama Petugas</th>
                     </tr>
-                <?php } ?>
-            </tbody>
-        </table>
-        <br>  
-        <button class="btn btn-primary" type="submit">Simpan</button>
-    </form>
+                  </thead>
+                  <tbody>
+                    <?php
+                    $items = [
+                      "AC", "Dinding", "Drainase", "Instalasi Listrik", "Jendela", 
+                      "Kaca", "Keyboard", "Kipas Angin", "Kursi Guru", "Kursi Hidrolik Siswa", 
+                      "Kursi Siswa", "Kusen", "LAN HUB", "Lemari", "List Plafond", 
+                      "Meja Guru", "Meja Siswa", "Mouse", "Papan Tulis", "PC All In One Asus", 
+                      "PC All In One Dell", "PC All In One HP", "PC All In One Lenovo", 
+                      "PC Rakitan", "Penghapus", "Pintu", "Plafon", "Remote AC", 
+                      "Router", "UPS", "Ventilasi",
+                    ];
 
+                    $no = 1;
+                    foreach ($items as $item) { ?>
+                      <tr>
+                        <td><?php echo $no++; ?></td>
+                        <td><input type="text" name="nama_barang[]" value="<?php echo $item; ?>" class="form-control" readonly></td>
+                        <td><input type="number" name="total_barang[]" class="form-control" required></td>
+                        <td><input type="number" name="kondisi_baik[]" class="form-control" required></td>
+                        <td><input type="number" name="kondisi_tidak_baik[]" class="form-control" required></td>
+                        <td><input type="text" name="keterangan[]" class="form-control"></td>
+                        <td><input type="text" name="nama_petugas" class="form-control" required></td>
+                      </tr>
+                    <?php } ?>
+                  </tbody>
+                </table>
+              </div>
+              <!-- Box footer -->
+              <div class="box-footer">
+                <button type="submit" class="btn btn-primary">Simpan</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+</div>
 
-
-
-    <!-- Control Sidebar -->
-    <aside class="control-sidebar control-sidebar-dark" style="display: none;">
-    <!-- Create the tabs -->
-    <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
-      <li><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
-      <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
-    </ul>
-    <!-- Tab panes -->
+<!-- Control Sidebar -->
+<aside class="control-sidebar control-sidebar-dark">
     <div class="tab-content">
-      <!-- Home tab content -->
       <div class="tab-pane" id="control-sidebar-home-tab">
         <h3 class="control-sidebar-heading">Recent Activity</h3>
-        <ul class="control-sidebar-menu">
-          <li>
-            <a href="javascript:void(0)">
-              <i class="menu-icon fa fa-birthday-cake bg-red"></i>
-
-              <div class="menu-info">
-                <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
-
-                <p>Will be 23 on April 24th</p>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:void(0)">
-              <i class="menu-icon fa fa-user bg-yellow"></i>
-
-              <div class="menu-info">
-                <h4 class="control-sidebar-subheading">Frodo Updated His Profile</h4>
-
-                <p>New phone +1(800)555-1234</p>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:void(0)">
-              <i class="menu-icon fa fa-envelope-o bg-light-blue"></i>
-
-              <div class="menu-info">
-                <h4 class="control-sidebar-subheading">Nora Joined Mailing List</h4>
-
-                <p>nora@example.com</p>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:void(0)">
-              <i class="menu-icon fa fa-file-code-o bg-green"></i>
-
-              <div class="menu-info">
-                <h4 class="control-sidebar-subheading">Cron Job 254 Executed</h4>
-
-                <p>Execution time 5 seconds</p>
-              </div>
-            </a>
-          </li>
-        </ul>
-        <!-- /.control-sidebar-menu -->
-
-        <h3 class="control-sidebar-heading">Tasks Progress</h3>
-        <ul class="control-sidebar-menu">
-          <li>
-            <a href="javascript:void(0)">
-              <h4 class="control-sidebar-subheading">
-                Custom Template Design
-                <span class="label label-danger pull-right">70%</span>
-              </h4>
-
-              <div class="progress progress-xxs">
-                <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:void(0)">
-              <h4 class="control-sidebar-subheading">
-                Update Resume
-                <span class="label label-success pull-right">95%</span>
-              </h4>
-
-              <div class="progress progress-xxs">
-                <div class="progress-bar progress-bar-success" style="width: 95%"></div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:void(0)">
-              <h4 class="control-sidebar-subheading">
-                Laravel Integration
-                <span class="label label-warning pull-right">50%</span>
-              </h4>
-
-              <div class="progress progress-xxs">
-                <div class="progress-bar progress-bar-warning" style="width: 50%"></div>
-              </div>
-            </a>
-          </li>
-          <li>
-            <a href="javascript:void(0)">
-              <h4 class="control-sidebar-subheading">
-                Back End Framework
-                <span class="label label-primary pull-right">68%</span>
-              </h4>
-
-              <div class="progress progress-xxs">
-                <div class="progress-bar progress-bar-primary" style="width: 68%"></div>
-              </div>
-            </a>
-          </li>
-        </ul>
-        <!-- /.control-sidebar-menu -->
-
       </div>
-      <!-- /.tab-pane -->
-      <!-- Stats tab content -->
-      <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
-      <!-- /.tab-pane -->
-      <!-- Settings tab content -->
-      <div class="tab-pane" id="control-sidebar-settings-tab">
-        <form method="post">
-          <h3 class="control-sidebar-heading">General Settings</h3>
-
-          <div class="form-group">
-            <label class="control-sidebar-subheading">
-              Report panel usage
-              <input type="checkbox" class="pull-right" checked>
-            </label>
-
-            <p>
-              Some information about this general settings option
-            </p>
-          </div>
-          <!-- /.form-group -->
-
-          <div class="form-group">
-            <label class="control-sidebar-subheading">
-              Allow mail redirect
-              <input type="checkbox" class="pull-right" checked>
-            </label>
-
-            <p>
-              Other sets of options are available
-            </p>
-          </div>
-          <!-- /.form-group -->
-
-          <div class="form-group">
-            <label class="control-sidebar-subheading">
-              Expose author name in posts
-              <input type="checkbox" class="pull-right" checked>
-            </label>
-
-            <p>
-              Allow the user to show his name in blog posts
-            </p>
-          </div>
-          <!-- /.form-group -->
-
-          <h3 class="control-sidebar-heading">Chat Settings</h3>
-
-          <div class="form-group">
-            <label class="control-sidebar-subheading">
-              Show me as online
-              <input type="checkbox" class="pull-right" checked>
-            </label>
-          </div>
-          <!-- /.form-group -->
-
-          <div class="form-group">
-            <label class="control-sidebar-subheading">
-              Turn off notifications
-              <input type="checkbox" class="pull-right">
-            </label>
-          </div>
-          <!-- /.form-group -->
-
-          <div class="form-group">
-            <label class="control-sidebar-subheading">
-              Delete chat history
-              <a href="javascript:void(0)" class="text-red pull-right"><i class="fa fa-trash-o"></i></a>
-            </label>
-          </div>
-          <!-- /.form-group -->
-        </form>
-      </div>
-      <!-- /.tab-pane -->
     </div>
-  </aside>
-  <!-- /.control-sidebar -->
-  <!-- Add the sidebar's background. This div must be placed
-       immediately after the control sidebar -->
-  <div class="control-sidebar-bg"></div>
+</aside>
+<div class="control-sidebar-bg"></div>
 </div>
-<!-- ./wrapper -->
 
-<!-- jQuery 3 -->
+<!-- jQuery -->
 <script src="<?php echo base_url();?>assets/bower_components/jquery/dist/jquery.min.js"></script>
-<!-- jQuery UI 1.11.4 -->
-<script src="<?php echo base_url();?>assets/bower_components/jquery-ui/jquery-ui.min.js"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script>
-  $.widget.bridge('uibutton', $.ui.button);
-</script>
-<!-- Bootstrap 3.3.7 -->
+<!-- Bootstrap -->
 <script src="<?php echo base_url();?>assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<!-- Morris.js charts -->
-<script src="<?php echo base_url();?>assets/bower_components/raphael/raphael.min.js"></script>
-<script src="<?php echo base_url();?>assets/bower_components/morris.js/morris.min.js"></script>
-<!-- Sparkline -->
-<script src="<?php echo base_url();?>assets/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
-<!-- jvectormap -->
-<script src="<?php echo base_url();?>assets/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-<script src="<?php echo base_url();?>assets/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-<!-- jQuery Knob Chart -->
-<script src="<?php echo base_url();?>assets/bower_components/jquery-knob/dist/jquery.knob.min.js"></script>
-<!-- daterangepicker -->
-<script src="<?php echo base_url();?>assets/bower_components/moment/min/moment.min.js"></script>
-<script src="<?php echo base_url();?>assets/bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
-<!-- datepicker -->
-<script src="<?php echo base_url();?>assets/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
-<!-- Bootstrap WYSIHTML5 -->
-<script src="<?php echo base_url();?>assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
-<!-- Slimscroll -->
-<script src="<?php echo base_url();?>assets/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-<!-- FastClick -->
-<script src="<?php echo base_url();?>assets/bower_components/fastclick/lib/fastclick.js"></script>
-<!-- AdminLTE App -->
+<!-- AdminLTE -->
 <script src="<?php echo base_url();?>assets/dist/js/adminlte.min.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="<?php echo base_url();?>assets/dist/js/pages/dashboard.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="<?php echo base_url();?>assets/dist/js/demo.js"></script>
 </body>
 </html>

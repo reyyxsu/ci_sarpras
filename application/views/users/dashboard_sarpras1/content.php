@@ -113,7 +113,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a href="<?php echo base_url('admin/dashboard'); ?>"><i class="fa fa-circle-o"></i> Home</a></li>
+            <li class="active"><a href="<?php echo base_url('pengunjung/labsatu'); ?>"><i class="fa fa-circle-o"></i> Home</a></li>
           </ul>
         </li>
         </li>
