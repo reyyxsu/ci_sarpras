@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Input extends CI_Controller 
+class Inputsatu extends CI_Controller 
 {
 
 	/**
@@ -28,7 +28,7 @@ class Input extends CI_Controller
 	public function __construct() 
 	{
         parent::__construct();
-        $this->load->model('Sarpras_model');
+        $this->load->model('Sarpras_modelsatu');
 	}
 
 	public function save()
@@ -62,7 +62,7 @@ class Input extends CI_Controller
         ];
     }
 
-    $this->Sarpras_model->insert_batch($data);
+    $this->Sarpras_modelsatu->insert_batch($data);
     redirect('pengunjung/labsatu');
 }
 }

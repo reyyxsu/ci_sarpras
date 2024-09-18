@@ -55,7 +55,7 @@
           <img src="<?php echo base_url();?>assets/dist/img/user2-160x160.png" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>LAB RPL 1</p>
+          <p>LAB RPL 2</p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
@@ -81,7 +81,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a href="<?php echo base_url('pengunjung/labsatu'); ?>"><i class="fa fa-circle-o"></i> Home</a></li>
+            <li class="active"><a href="<?php echo base_url('pengunjung/labdua'); ?>"><i class="fa fa-circle-o"></i> Home</a></li>
           </ul>
         </li>
         </li>
@@ -93,7 +93,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo base_url('input/input_satu'); ?>"><i class="fa fa-circle-o"></i> Input Sarpras</a></li>
+            <li><a href="<?php echo base_url('inputdua/input_dua'); ?>"><i class="fa fa-circle-o"></i> Input Sarpras</a></li>
             </ul>
           </ul>
         </li>
@@ -109,11 +109,11 @@
           <!-- Box for form -->
           <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">INPUT SARPRAS LAB 1</h3>
+              <h3 class="box-title">INPUT SARPRAS LAB 2</h3>
             </div>
 
             <!-- Form start -->
-            <form action="<?php echo site_url('inputsatu/save'); ?>" method="post" enctype="multipart/form-data">
+            <form action="<?php echo site_url('inputdua/save'); ?>" method="post" enctype="multipart/form-data">
               <div class="box-body">
                 <table class="table table-bordered">
                   <thead>

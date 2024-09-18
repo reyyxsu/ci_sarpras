@@ -113,7 +113,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a href="<?php echo base_url('admin/dashboard'); ?>"><i class="fa fa-circle-o"></i> Home</a></li>
+            <li class="active"><a href="<?php echo base_url('pengunjung/labempat'); ?>"><i class="fa fa-circle-o"></i> Home</a></li>
           </ul>
         </li>
         </li>
@@ -125,7 +125,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo base_url('detail_satu/index'); ?>"><i class="fa fa-circle-o"></i> Input Sarpras</a></li>
+            <li><a href="<?php echo base_url('inputempat/input_empat'); ?>"><i class="fa fa-circle-o"></i> Input Sarpras</a></li>
             </ul>
           </ul>
         </li>

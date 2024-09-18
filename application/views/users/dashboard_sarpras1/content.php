@@ -125,7 +125,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo base_url('input/input_satu'); ?>"><i class="fa fa-circle-o"></i> Input Sarpras</a></li>
+            <li><a href="<?php echo base_url('inputsatu/input_satu'); ?>"><i class="fa fa-circle-o"></i> Input Sarpras</a></li>
             </ul>
           </ul>
         </li>
